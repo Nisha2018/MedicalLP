@@ -294,7 +294,7 @@ body{
 .medical .form-area{
 	background: rgba(0,0,0,0.4);
     padding: 30px 20px;
-    width: 85%;
+    width: 100%;
     border-radius: 4px;
     grid-row-gap: 2rem;
     justify-self: center;
@@ -603,6 +603,11 @@ input[type="date"]:focus::-webkit-datetime-edit{
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: 1fr;
 }
+
+.medical .form-area{
+    width: 85%;
+}
+
 
 .medical .form-area form{
 	grid-template-columns: 1fr 1fr;
