@@ -1,0 +1,943 @@
+/*header*/
+
+header{
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+	grid-template-rows: 1fr;
+	align-items: center;
+	justify-items: center;
+	background: transparent;
+}
+
+nav>ul{
+	display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(5,auto);
+    text-align: center;
+    grid-column-gap: 3rem;
+}
+
+nav>ul>li a{
+    display: grid;
+	height: 70px;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+header nav .btn-link{
+	background: #439FE0;
+    color: #fff;
+    height: 40px;
+    border-radius: 4px;
+    padding: 1rem;
+}
+
+header nav ul li.last{
+	align-self: center;
+}
+
+header #toggle, header label{
+	position: absolute;
+    top: 24px;
+	display: none;
+}
+
+label{
+    right: 25px;
+    color: #595454;
+    font-size: 20px;
+}
+
+.dropdown{
+	position: relative;
+}
+
+.dropdown-content{
+	position: absolute;
+	top: 60px;
+	left: -40px;
+    background: #fff;
+    width: 150px;
+    text-align: left;
+    font-weight: bold;
+    display: none;
+}
+
+.dropdown-content a{
+	height: 40px;
+	color: grey;
+	padding: 0px 10px;
+}
+
+.dropdown-content a:hover{
+	background-color: #f9f3f3;
+    padding: 0px 10px;
+}
+
+nav>ul>li:hover .dropdown-content{
+	display: block;
+}
+
+#drop{
+	display: none;
+}
+
+header .logo img[alt="logo2"]{
+		display: none;
+}
+
+header .logo img[alt="logo1"]{
+		display: block;
+	}
+
+
+
+/* Mobile Navbar */
+
+@media screen and (max-width: 800px){
+	nav{
+		width: 100%;
+		background: #fff;
+		display: none;
+	}
+
+	nav>ul>li a{
+		height: 50px;
+		color: #5f5d5d;
+    	font-weight: bold;
+	}
+
+	header label{
+		display: block;
+		cursor: pointer;
+	}
+
+	header #toggle:checked ~ nav{
+		display: block;
+	}
+
+	header nav .btn-link {
+    width: 42%;
+    margin: 20px 0;
+	}
+
+	nav>ul{
+		display: grid;
+    	grid-template-rows: repeat(5,auto);
+    	grid-template-columns: 1fr;
+    	text-align: left;
+	}
+
+	nav>ul>li{
+		border-top: 1px solid #c4bebe;
+		margin: 0 15px;
+	}
+
+	header{
+		grid-template-columns: 1fr;
+		grid-template-rows: auto 1fr;
+		background: #fff;
+	}
+
+	header .logo img[alt="logo1"]{
+		display: none;
+	}
+
+	header .logo img[alt="logo2"]{
+		display: block;
+	}
+
+	.logo{
+	height: 70px;
+    display: grid;
+    align-items: center;
+    justify-self: start;
+    padding-left: 25px;
+	}
+
+	.dropdown-content {
+	position: static;
+	padding-left: 20px;	
+    border: none;
+    width: 100%;
+    display: none;
+	}
+
+	.dropdown>a{
+		visibility: hidden;
+	}
+
+	.dropdown>label{
+		left: 0px;
+    	color: #5f5d5d;
+    	font-weight: bold;
+    	font-size: 16px;
+	}
+
+	#drop + .dropdown-content{
+		display: none;
+	}
+
+	#drop:checked + .dropdown-content{
+		display: block;
+	}
+}
+
+/*Header Ends*/
+
+
+/*styling*/
+
+*{
+	box-sizing: border-box;
+}
+
+html{
+	font-size: 62.5%;
+}
+
+body{
+	text-align: center;
+	font-size: 1.6rem;
+	line-height: 1.2;
+	font-family: 'Lato', sans-serif;
+}
+
+.p-all{
+	padding: 8rem 2rem;
+}
+
+.img{
+	width: 100%;
+	height: auto;
+}
+
+.bg-img{
+	background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
+	 url("Images/medical-1.jpg");
+	background-size: cover;
+}
+
+.bg-blue{
+	background-color: #439FE0;
+}
+
+.color-blue{
+	color: #439FE0;
+}
+
+.bg-grey{
+	background-color: #525e6c;
+}
+
+.color-grey{
+	color: #69696e;
+}
+
+.color-white{
+	color: #fff;
+}
+
+.font-30{
+	font-size: 30px;
+}
+
+.font-26{
+	font-size: 26px;
+}
+
+.font-24{
+	font-size: 24px;
+}
+
+.font-20{
+	font-size: 20px;
+}
+
+.font-18{
+	font-size: 18px;
+}
+
+.font-17{
+	font-size: 17px;
+}
+
+.font-15{
+	font-size: 15px;
+}
+
+.font-14{
+	font-size: 14px;
+}
+
+.font-bold{
+	font-weight: bold;
+}
+
+.btn{
+	cursor: pointer;
+    padding: 1.5rem 2rem;
+    font-size: 16px;
+    font-weight: bold;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+}
+
+.medical .text .title{
+	font-size: 36px;
+}
+
+.medical .form-area{
+	background: rgba(0,0,0,0.4);
+    padding: 30px 20px;
+    width: 85%;
+    border-radius: 4px;
+    grid-row-gap: 2rem;
+    justify-self: center;
+}
+
+input[type=date]{
+	height: 58px;
+}
+
+input[type="date"]:before{
+	content: attr(placeholder) !important;
+	margin-right: 0.5em;
+	color: grey;
+	font-size: 18px;
+}
+
+input[type="date"]:focus:before,input[type="date"]:valid:before{
+	content: "";
+}
+
+input[type="date"]:required:invalid::-webkit-datetime-edit{
+	color: transparent;
+}
+
+input[type="date"]:focus::-webkit-datetime-edit{
+	color: black !important;
+}
+
+
+.medical .form-area .form-control, .footer .about .form-area form .form-control{
+	width: 100%;
+    border: none;
+    font-size: 16px;
+    padding: 2rem;
+    border-radius: 2px;
+}
+
+.medical .form-area form .btn.btn1{
+	width: 100%;
+	border-bottom: 4px solid #437598;
+	text-transform: uppercase;
+}
+
+.health-solution .content .text .btn.btn2{
+	background: transparent;
+    border: 4px solid #fff;
+    text-transform: uppercase;
+}
+
+ .departments .content .tabs .tab{
+ 	position: relative;
+ }
+
+  .departments .content .tabs .tab .image{
+  	position: absolute;
+    bottom: 60%;
+    right: 30%;
+  }
+
+  .departments .content .tabs .tab label{
+  	height: 100px;
+    line-height: 130px;
+    display: block;
+    border: 1px solid #e9e2e2;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 15px;
+  }
+
+.departments .content .tab-content .tab, 
+.specialists .content .tab-content .tab .doctor .text, .news .content .info .text{
+	text-align: left;
+}
+
+ .testimonials .content .box .image2 img, .testimonials .content .box .image3 img{
+ 	border-radius: 100%;
+    background: #fff;
+    padding: 5px;
+ }
+
+.testimonials .content .box .text .desc{
+	color: #c5d1f3;
+} 
+
+.specialists .content .tab-content .tab .doctor .text .role{
+	font-size: 12px;
+}
+
+.experts .button .btn.btn2{
+	border-bottom: 4px solid #437598;
+	font-size: 18px;
+    padding: 30px 50px;
+}
+
+.news .content .info .text .title .date{
+	border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    width: 60px;
+    height: 50px;
+    padding: 5px 7px;
+    text-align: center;
+}
+
+.news .content .info .image img{
+	border-radius: 6px;
+}
+
+.news .content .info .text a{
+	text-decoration: none;
+}
+
+.location{
+	padding-bottom: 100px;	
+}
+
+.location .content .text .btn.btn3{
+	background: #fff;
+	text-transform: uppercase;
+	color: #69696e;
+}
+
+.footer .contacts .info .icon i{
+	font-size: 24px;
+}
+
+.footer .contacts{
+	border-bottom: 2px solid #fff;
+	grid-row-gap: 4rem;
+}
+
+.footer .about{
+	padding: 4rem;
+    border-bottom: 2px solid #fff;
+}
+
+.footer .about .form-area form .btn.btn4{
+	width: 100%;
+    text-transform: uppercase;
+    padding: 2rem;
+}
+
+.footer .license a{
+	text-decoration: none;
+	color: #fff; 
+}
+
+.footer .copyright{
+	background: #2e3234;
+	padding: 3rem;
+	grid-row-gap: 4rem;
+}
+
+.footer .copyright .social-links i{
+	color: #fff;
+	font-size: 20px;
+}
+
+.grid-m{
+	display: grid;
+	grid-template-columns: 1fr;
+}
+
+.medical,.health-solution, .departments,.testimonials, .specialists, .experts,
+.news, .location, .head, .medical .form-area,.health-solution .content,
+.testimonials .content,.location .content, .footer .about,.footer .copyright, 
+.medical .form-area .form-text,.testimonials .content .box, .footer .about .text,
+.footer .about .form-area,.footer .about .form-area form,.departments .content .tabs .tab,
+.specialists .content,.news .content .info, .specialists .content .tab-content .tab .doctor,
+  .departments .content, .experts .help{
+	grid-template-rows: auto auto;
+	grid-row-gap: 1.5rem;
+}
+
+.footer, .news .content,.footer .contacts, .health-solution .content .text,
+.location .content .text,.news .content .info .text{
+	grid-template-rows: auto auto auto auto;
+	grid-row-gap: 1.5rem;
+}
+
+.location .content .map-area{
+	grid-template-rows: auto;
+}
+
+.location .content .map-area iframe{
+	width: 100%;
+	height: 500px;
+}
+
+.medical .text,.departments .content .info,.testimonials .content .box .text, 
+.specialists .content .tab-content .tab, .location .content .text .info,
+.specialists .content .tab-content .tab .doctor .text,.footer .contacts .info{
+	grid-template-rows: auto auto auto;
+	grid-row-gap: 1.5rem;
+}
+
+.departments .content .tab-content .tab{
+	grid-template-rows: repeat(5,auto);
+	grid-row-gap: 1.5rem;
+}
+
+.medical .form-area form{
+	grid-template-rows: repeat(6,auto);
+	grid-row-gap: 1rem;
+}
+
+.departments .content .tabs{
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 2rem;
+}
+
+.news .content .info .text .title{
+	grid-template-columns: auto auto;
+	grid-template-rows: auto;
+	grid-column-gap: 1rem;
+}
+
+.testimonials .content .box .image1, .testimonials .content .box .image4{
+	display: none;
+}
+
+.departments .content input[type="radio"]{
+	display: none;
+}
+
+.footer .copyright .social-links{
+	grid-template-columns: auto auto auto;
+	justify-content: center;
+    grid-column-gap: 2rem;
+
+}
+
+.footer .license{
+	grid-template-columns: auto auto auto;
+	grid-template-rows: auto auto;
+	justify-content: center;
+    grid-column-gap: 1.5rem;
+    grid-row-gap: 1rem;
+    padding: 4rem;
+}
+
+.specialists .content .tab-content, .departments .content .tab-content{
+	grid-template-rows: auto;
+}
+
+.specialists .content .tab-content .tab1, .specialists .content .tab-content .tab2,
+.departments .content .tab-content .tab-1, .departments .content .tab-content .tab-2,
+.departments .content .tab-content .tab-3,.departments .content .tab-content .tab-4,
+.departments .content .tab-content .tab-5,.departments .content .tab-content .tab-6{
+	display: none;
+}
+
+#toggle1:checked ~ .tab-content .tab1, #toggle2:checked ~ .tab-content .tab2,
+#tab1:checked ~ .tab-content .tab-1,#tab2:checked ~ .tab-content .tab-2,
+#tab3:checked ~ .tab-content .tab-3,#tab4:checked ~ .tab-content .tab-4,
+#tab5:checked ~ .tab-content .tab-5, #tab6:checked ~ .tab-content .tab-6{
+	display: grid;
+}
+
+.departments .content .tab-content .tab{
+	grid-row-gap: 3rem;
+}
+
+.specialists .content input[type="radio"]{
+	display: none;
+}
+
+.footer .about .form-area form{
+	grid-row-gap: 0.3rem;
+}
+
+.location .content .text{
+	grid-row-gap: 2rem;
+}
+
+.medical, .testimonials .content, .specialists, .experts, .news,
+ .news .content, .location{
+	grid-row-gap: 3rem;
+}
+
+.departments, .footer .about{
+	grid-row-gap: 6rem;
+}
+
+.location .content .text .info{
+	grid-row-gap: 0;
+}
+
+.footer .license .department{
+	grid-row: 2;
+    grid-column: 1/span 2;
+    margin-right: 40px;
+}
+
+.footer .license .doctor{
+	grid-row: 2;
+	grid-column: 2/span 2;
+	margin-left: 30px;
+}
+
+
+/*tab view*/
+@media screen and (min-width: 600px){
+.grid-t{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr;
+}
+
+.medical .form-area form{
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: auto auto auto auto;
+	grid-column-gap: 0.4rem;
+    grid-row-gap: 1rem;
+}
+
+.medical .form-area form .msg{
+	grid-column: 1/span 2;
+}
+
+.medical .form-area form .button{
+	grid-column: 1/span 2;
+}
+
+.departments .content .tabs{
+	grid-template-columns: repeat(6,1fr);
+}
+
+.specialists .content .tab-content .tab{
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr;
+	grid-column-gap: 2rem;
+}
+
+.news .content{
+	grid-template-rows: auto auto;
+	grid-column-gap: 3rem;
+}
+
+.footer .copyright{
+	grid-template-rows: 1fr;
+	grid-template-columns: 2fr 1fr;
+}
+
+.footer .license{
+	grid-template-columns: repeat(5,1fr);
+	grid-template-rows: 1fr;
+	justify-items: center;
+}
+
+.health-solution, .location{
+	width: 97%;
+    margin: auto;
+}
+
+.departments .content .image .img-container{
+	width: 80%;
+	margin: auto;
+}
+
+.experts{
+	padding: 8rem 20rem;
+}
+
+.experts .help{
+	width: 85%;
+    margin: auto;
+}
+
+.footer .about form{
+	width: 90%;
+    margin: auto;
+}
+
+.footer .license .department{
+	grid-row: 1;
+    grid-column: 4;
+}
+
+.footer .license .doctor{
+	grid-row: 1;
+    grid-column: 5;
+}
+
+.footer .copyright .social-links{
+	justify-self: end;
+}
+
+.footer .copyright .text{
+	justify-self: start;
+	grid-template-columns: 1fr;
+}
+
+}
+
+
+/*desktop view*/
+@media screen and (min-width: 992px){
+.grid-d{
+	display: grid;
+	grid-template-rows: 1fr;
+}
+
+.head{
+	grid-template-columns: 1fr 3fr 1fr;
+}
+
+.head .heading{
+	grid-column: 2;
+}
+
+.head .description{
+	grid-column: 2;
+}
+
+.medical, .health-solution .content{
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr;
+	grid-column-gap: 2rem;
+}
+
+.health-solution .content .image{
+	grid-column: 2;
+}
+
+.health-solution .content .text{
+	grid-column: 1;
+	grid-row: 1;
+	text-align: left;
+	padding-left: 40px;
+}
+
+.health-solution .content .text .title{
+	align-self: end;
+}
+
+.health-solution .content, .departments .content, .specialists .content, 
+.location .content{
+    width: 85%;
+    margin: auto;
+}
+
+.news .content{
+	width: 70%;
+	margin: auto;
+	grid-row-gap: 5rem;
+}
+
+.news .content .info .text .title .post{
+	font-size: 20px;
+}
+
+.departments .content, .testimonials,  .testimonials .content, .news{
+	grid-row-gap: 5rem;
+}
+
+.departments .content .tab-content .tab{
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 4fr;
+	grid-row-gap: 2rem;
+}
+
+.specialists .content label{
+	width: 12px;
+    height: 12px;
+    display: inline-block;
+    background: #b3afaf;
+    border-radius: 100%;
+    cursor: pointer;
+    grid-row: 3;
+}
+
+.specialists .content .label1{
+	position: relative;
+    left: 50%;
+}
+
+.specialists .content .label2{
+	position: relative;
+    right: 4430%;;
+}
+
+.departments .tab-content .tab .image{
+	grid-column: 1;
+	grid-row: 1/span 4;
+}
+
+.testimonials .content .box{
+	grid-template-columns: 1fr 2fr 1fr;
+	grid-template-rows: auto;
+}
+
+.testimonials .content .box .text{
+	grid-column: 2;
+	grid-row: 1;
+	text-align: left;
+	width: 80%;
+    margin: auto;
+}
+
+.testimonials .content .box .image1, .testimonials .content .box .image4{
+	display: grid;
+}
+
+.testimonials .content .box .image1, .testimonials .content .box .image3{
+	justify-self: end;
+}
+
+.testimonials .content .box .image2{
+	grid-column: 3;
+	justify-self: start;
+}
+
+.testimonials .content .box .image4{
+	grid-column: 3;
+	justify-self: start;
+}
+
+.testimonials .content .box .image3{
+	grid-column: 1;
+	grid-row: 1;
+}
+
+.testimonials .content .box .text .name{
+	font-size: 18px;
+}
+
+.medical .form-area form .msg{
+	grid-column: 1/span 2;
+}
+
+.medical form .button{
+	grid-column: 1/span 2;
+}
+
+.experts, .footer .about, .footer form{
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr;
+}
+
+.experts .help, .location .content .text, .footer .about{
+	text-align: left;
+}
+
+.location .content{
+	grid-template-rows: auto;
+	grid-template-columns: 1fr 1fr;
+	grid-column-gap: 2rem;
+}
+
+ .location .content .text{
+ 	padding-left: 30px;
+ }
+
+ .footer{
+ 	grid-row-gap: 0rem;
+ }
+
+.footer .contacts{
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    text-align: left;
+    justify-self: center;
+    grid-column-gap: 12rem;
+}
+
+.footer .about {
+	padding: 0;
+}
+
+.footer .about .text{
+	border-right: 2px solid #fff;
+	padding: 60px 30px;
+    margin-left: 15%;
+}
+
+.footer .about .form-area{
+	padding: 60px 30px;
+}
+
+.footer .about .form-area form{
+	width: 70%;
+    margin: 0;
+    grid-column-gap: 0.5rem;
+}
+
+.footer .license{
+	justify-content: start;
+    grid-template-columns: repeat(5, 150px);
+    grid-column-gap: 0.2rem;
+}
+
+.medical .text{
+	grid-template-rows: 50px 40px 100px;
+	grid-template-columns: 85%;
+	align-content: center;
+	text-align: left;
+    justify-content: center;
+}
+
+.medical .text .description{
+	align-self: center;
+	font-size: 22px;
+}
+
+.medical .text .about{
+	align-self: start;
+}
+
+.medical .text .title {
+    font-size: 52px;
+}
+
+.font-24 {
+    font-size: 26px;
+}
+
+.font-30 {
+    font-size: 42px;
+}
+
+.font-18 {
+    font-size: 22px;
+}
+
+.font-26 {
+    font-size: 34px;
+}
+
+}
+/*grid structure ends*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
